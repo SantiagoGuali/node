@@ -11,7 +11,6 @@ exports.up = function(knex) {
         table.string('categoria', 100);
         table.decimal('precio', 10, 2).notNullable();
         table.integer('cantidad_nventario');
-        table.string('proveedor', 100);
         table.date('fecha_adquisicion');
     }
     )
