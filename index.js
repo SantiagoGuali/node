@@ -13,3 +13,5 @@ app.use('/api', routes);  //configura la url base y rutas
 app.listen(port, () => {           //Ejecuta ls spi pot rl purtyo 3000
     console.log(`Servidor corriendo en el puerto ${port}`)
 })
+
+//cambios en windows confimados 
