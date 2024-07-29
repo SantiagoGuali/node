@@ -9,7 +9,7 @@ class Customer extends Model { //creo herencia de Model
     static get jsonSchema() { // Especifica la estructura de la tabla
         return {
             type: 'object', // object para un daroa, array para una lista
-            required: ['name', 'email'], // campos requeridos 
+            //required: ['name', 'email'], // campos requeridos 
 
             properties: {// estructura de los campos 
                 id: { type: 'integer'},
