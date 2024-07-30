@@ -13,7 +13,10 @@ class Factura extends Model {
 
             properties: {
                 id_factura: { type: 'integer' },
+                codigo: {type: 'string', minLength: 9, maxLength: 10},
                 fecha_emision: { type: 'string', format: 'date' },
+                nota: {type: 'string' },
+                impuesto: { type: 'number' },
                 monto_total: { type: 'number' }
             }
         };

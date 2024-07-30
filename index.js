@@ -1,29 +1,24 @@
+// importar librerias 
 const express = require('express');
+const cors = require('cors'); // Importar el paquete cors
 const knex = require('./db');
-const routes = require('./routes'); //llamando rutas
+const routes = require('./routes'); // llamando rutas
 
-const app = express(); //nueva instancia
-const port = 3001;     //puerto de salida
+const app = express(); // Creamos una nueva instancia
+const port = 3001;     // puerto de salida
 
-app.use(express.json());   //configura tipo de dato json
+// Configurar CORS para permitir solicitudes desde cualquier origen
+app.use(cors());
 
-//servir archivos estáticos desde la carpeta 'public'
-app.use(express.static('public'));
+// También puedes configurar CORS para permitir sólo desde un origen específico
+// app.use(cors({
+//   origin: 'http://127.0.0.1'
+// }));
 
-//URL base y rutas 
-app.use('/api', routes);
+app.use(express.json());   // Configura tipo de dato JSON
 
-//404
-app.use((req, res, next) => {
-    res.status(404).send('page not found');
-});
+app.use('/api', routes);  // Configura la URL base y rutas
 
-//errores
-app.use((err, req, res, next) => {
-    console.error(err.stack);
-    res.status(500).send('Algo salió mal!');
-});
-
-app.listen(port, () => { //API por el puerto 3001
+app.listen(port, () => {           // Ejecuta el servidor en el puerto 3000
     console.log(`Servidor corriendo en el puerto ${port}`);
 });

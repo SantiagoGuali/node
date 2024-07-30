@@ -6,8 +6,11 @@ exports.up = function(knex) {
     return knex.schema.createTable('customer', table =>
         {
             table.increments('id').primary();
-            table.string('name').notNullable();
+            table.string('fisrtname').notNullable();
+            table.string('lastname').notNullable();
             table.string('email').notNullable().unique();
+            table.string('phone').notNullable;
+            table.string('address').notNullable;
         });
   
 };

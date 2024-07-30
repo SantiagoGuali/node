@@ -13,9 +13,13 @@ class Customer extends Model { //creo herencia de Model
 
             properties: {// estructura de los campos 
                 id: { type: 'integer'},
-                name: {type: 'string', minLength: 1},
+                firstname: {type: 'string', minLength: 1, maxLength: 200},
                 email: {type: 'string', format: 'email'},
-                edad: {type: 'integer'},
+                phone: {type: 'string', minLength: 9, maxLength: 10},
+                address: {type: 'string', minLength: 1, maxLength: 200},
+                age: {type: 'integer'},
+
+
             }
         };
     }

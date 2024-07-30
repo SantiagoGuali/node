@@ -42,3 +42,4 @@ router.delete('/detalle_facturas/:id', detalleFacturaHandler.deleteDetalleFactur
 
 
 module.exports = router;
+
